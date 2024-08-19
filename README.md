@@ -3,30 +3,9 @@ Provides a baseline project for the development and continous integration of sev
 \
 Each package is automatically deployed in its own branch whenever it is updated in the main branch. Packages can be added as git repositories with the url structure:\
 `https://github.com/PixelsHub/pixelshub-coreunitypackages.git#{package name}`.
-### Current Unity packages
+Example package:
 ```
-https://github.com/PixelsHub/pixelshub-coreunitypackages.git#unitybasics
-```
-```
-https://github.com/PixelsHub/pixelshub-coreunitypackages.git#colorschemes
-```
-```
-https://github.com/PixelsHub/pixelshub-coreunitypackages.git#lua
-```
-```
-https://github.com/PixelsHub/pixelshub-coreunitypackages.git#widgets
-```
-```
-https://github.com/PixelsHub/pixelshub-coreunitypackages.git#assetbundles
-```
-```
-https://github.com/PixelsHub/pixelshub-coreunitypackages.git#microsoft.authentication
-```
-```
-https://github.com/PixelsHub/pixelshub-coreunitypackages.git#filesystem
-```
-```
-https://github.com/PixelsHub/pixelshub-coreunitypackages.git#filesystem.msgraph
+https://github.com/PixelsHub/pixelshub-coreunitypackages.git#packageexample
 ```
 ## Unity Package Git Dependency handling
 Add the script [Assets/Editor/PackagesGitDependencyAssetImporter.cs](Assets/Editor/PackagesGitDependencyAssetImporter.cs) inside any project to automatically try to download git package dependencies when specified in a `.upgd` file that is imported into Unity. These files should contain a line for each dependency with the structure `{package_name}@{git_url}` such as:
