@@ -34,4 +34,4 @@ jobs:
             fi
           }
           
-          split_and_push myexample
+          split_and_push packageexample
