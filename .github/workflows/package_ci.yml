@@ -7,10 +7,13 @@ jobs:
   split-upm:
     name: split upm branches
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0
+        token: ${{ secrets.PAT_TOKEN }}
     - name: split upm branches
       run: |
         function split_and_push() {
@@ -28,7 +31,7 @@ jobs:
             # Check if target branch does not exist or check for changes
             if [ ! -e $branch_name ] || [ ! git diff --quiet origin/main:$main_package origin/$branch_name ] ; then
               git subtree split -P $main_package -b $branch_name
-              git push -u origin $branch_name
+              git push -u https://${{ secrets.PAT_TOKEN }}@github.com/${{ github.repository }}.git $branch_name
             else
               echo "No changes for package $package_name. Skipping subtree update."
             fi
