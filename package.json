@@ -1,0 +1,12 @@
+{
+  "displayName": "PixelsHub Package Example",
+  "name": "com.pixelshub.packageexample",
+  "version": "1.0.0",
+  "unity": "2023.2",
+  "description": "Example package.",
+  "author": {
+    "name": "PixelsHub",
+    "email": "desarrollo@pixels-hub.com",
+    "url": "https://pixels-hub.com"
+  }
+}
